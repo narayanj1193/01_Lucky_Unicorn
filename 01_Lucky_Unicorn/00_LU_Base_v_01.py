@@ -1,34 +1,40 @@
 # Functions go here...
-def yes_no(question):
-    valid = False
-    while not valid:
 
+# checks users enter yes or no
+def yes_no(question):
+    while True:
+
+        # Variables
+        yes_variables = ["yes", "y", "yer", "yeah"]
+        no_variables = ["no", "n", "nay", "nope"]
         # Ask the user if they have played before
+
         response = input(question).lower()
 
         # If they say yes, output 'program continues'
-        if response == "yes" or response == "y":
+        if response.lower() in yes_variables:
             response = "yes"
             return response
 
-        elif response == "no" or response == "n":
+        elif response.lower() in no_variables:
             response = "no"
             return response
 
-        # If they say no, output 'display instructions'
         else:
-            print("Please answer yes / no \n")
+            print("Please type either yes or no \n")
 
 
+# Displays instructions
 def instructions():
     print("\n *** How to Play *** \n")
     print("These are the rules:\n* stuff about rules *\n")
     return ""
 
 
+# checks user enters an integer between a high and low number
 def num_checker(question, low, high):
     # Main Routine
-    error = "Please enter a whole number that is between 1 and 10. \n"
+    error = "Please enter a whole number that is from {} to {}.".format(low, high)
 
     while True:
         try:
@@ -36,7 +42,7 @@ def num_checker(question, low, high):
             response = int(input(question))
 
             # if the amount is too low / too high give
-            if low < response <= high:
+            if low <= response <= high:
                 return response
 
             else:
@@ -54,6 +60,6 @@ if played_before == "no":
     instructions()
 
 # Ask user how much they want to play with
-betting_amount = num_checker("How much would you like to play with? ", 0, 10)
+betting_amount = num_checker("\n How much would you like to play with? ", 1, 10)
 
 print("You have chosen to spend ${} \n".format(betting_amount))
