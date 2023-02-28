@@ -6,7 +6,7 @@ while show_instructions.lower() != "xxx":
     print("")
     show_instructions = input("Have you played before? ").lower()
 
-    # If they say yes, ouput 'program continues'
+    # If they say yes, output 'program continues'
     if show_instructions == "yes" or show_instructions == "y":
         show_instructions = "yes"
         print("program continues")
@@ -16,6 +16,5 @@ while show_instructions.lower() != "xxx":
         print("Display Instructions")
 
     # If they say no, output 'display instructions'
-    else: 
+    else:
         print("Please answer yes / no")
-    

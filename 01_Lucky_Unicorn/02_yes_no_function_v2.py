@@ -1,20 +1,22 @@
-# Functions go here...
+# function
 def yes_no(question):
     while True:
 
         # Variables
         yes_variables = ["yes", "y", "yer", "yeah"]
-        no_variables = ["no", "n", "nay", "taemin"]
+        no_variables = ["no", "n", "nay"]
         # Ask the user if they have played before
 
         response = input(question).lower()
 
         # If they say yes, output 'program continues'
         if response.lower() in yes_variables:
-            return "yes"
+            response = "yes"
+            return response
 
         elif response.lower() in no_variables:
-            return "no"
+            response = "no"
+            return response
 
         elif response.lower() == "xxx":
             break
@@ -23,20 +25,8 @@ def yes_no(question):
             print("Please type either yes or no ")
 
 
-def instructions():
-    print("*** How to Play ***")
-    print()
-    print("These are the rules:")
-    print()
-    return ""
+# Main Routine
 
+show_instructions = yes_no("Have you played this game before? ")
 
-# Main routine
-
-played_before = yes_no("Have you played this game before? ")
-
-if played_before == "no":
-    instructions()
-
-
-print()
+print("Your response was, {}".format(show_instructions))
