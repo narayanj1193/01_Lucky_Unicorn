@@ -140,4 +140,4 @@ while play_again != "xxx":
 
 print()
 print("Total rounds played: {}".format(rounds_played))
-print("Final Balance: ${}".format(balance))
+print(f"Final Balance ${balance:.2f}")
